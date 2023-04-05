@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Inputbox from "./components/Inputboxes";
 import Dropdownmenu from "./components/Dropdown";
+import Addsongbtn from "./components/Addsongbtn";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
         </a>
       </header>
       <Inputbox />
+      <Inputbox />
       <Dropdownmenu />
+      <Addsongbtn />
     </div>
   );
 }
