@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Inputbox from "./components/Inputboxes";
+import Dropdownmenu from "./components/Dropdown";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header>
       <Inputbox />
+      <Dropdownmenu />
     </div>
   );
 }
