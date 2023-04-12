@@ -6,7 +6,7 @@ import Addsongbtn from "./components/Addsongbtn";
 import Listoverview from "./components/List-overview";
 import Header from "./components/Header";
 import { useDispatch } from "react-redux";
-import { changeArtist } from "./actions";
+import { changeArtist, changeSong } from "./actions";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +20,10 @@ function App() {
         placeholder="Artist"
         onchange={(newArtist) => dispatch(changeArtist(newArtist))}
       />
-      <Inputbox placeholder="Song name" />
+      <Inputbox
+        placeholder="Song name"
+        onchange={(newSong) => dispatch(changeSong(newSong))}
+      />
       <Dropdownmenu />
       <Dropdownmenu />
       <Addsongbtn />

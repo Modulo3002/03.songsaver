@@ -4,3 +4,10 @@ export const changeArtist = (artistName) => {
     payload: artistName,
   };
 };
+
+export const changeSong = (songName) => {
+  return {
+    type: "CHANGE_SONG",
+    payload: songName,
+  };
+};
