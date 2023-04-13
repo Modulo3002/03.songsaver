@@ -7,6 +7,7 @@ function Inputbox(props) {
         type="text"
         name="inputbox"
         placeholder={props.placeholder}
+        value={props.value}
         onChange={(event) => {
           props.onchange(event.target.value);
         }}
