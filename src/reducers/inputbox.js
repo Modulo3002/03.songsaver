@@ -16,7 +16,7 @@ export const inputboxReducer2 = (state = "", action) => {
   }
 };
 //hieronder voorbeeld van multi input in state.
-//in de useSelector zou het dan state.inputboxReducer3.artist zijn. :)
+//in de useSelector zou het dan state.inputboxReducer3.artist zijn. :) nb
 export const inputboxReducer3 = (state = { artist: "", song: "" }, action) => {
   switch (action.type) {
     case "CHANGE_SONG":

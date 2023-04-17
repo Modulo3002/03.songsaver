@@ -8,11 +8,14 @@ import Header from "./components/Header";
 import { useDispatch } from "react-redux";
 import { changeArtist, changeSong } from "./actions";
 import { useSelector } from "react-redux";
+import Testcomponent from "./components/Testcomponent";
 
 function App() {
   const inputboxState = useSelector((state) => state.inputboxReducer);
   const inputboxState2 = useSelector((state) => state.inputboxReducer2);
   console.log(inputboxState2);
+  const rating = [1, 2, 3, 4, 5];
+  const genre = ["pop", "rock", "dance", "disco", "electro"];
   const dispatch = useDispatch();
   return (
     <div className="App">
@@ -20,6 +23,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Header />
+      <Testcomponent />
       <Inputbox
         placeholder="Artist"
         value={inputboxState}
@@ -30,8 +34,9 @@ function App() {
         value={inputboxState2}
         onchange={(newSong) => dispatch(changeSong(newSong))}
       />
-      <Dropdownmenu />
-      <Dropdownmenu />
+      <Dropdownmenu selection={genre} />
+      <Dropdownmenu selection={rating} />
+
       <Addsongbtn />
       <Listoverview />
     </div>
