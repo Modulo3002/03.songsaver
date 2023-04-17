@@ -6,9 +6,8 @@ import Addsongbtn from "./components/Addsongbtn";
 import Listoverview from "./components/List-overview";
 import Header from "./components/Header";
 import { useDispatch } from "react-redux";
-import { changeArtist, changeSong } from "./actions";
+import { changeArtist, changeSelected, changeSong } from "./actions";
 import { useSelector } from "react-redux";
-import Testcomponent from "./components/Testcomponent";
 
 function App() {
   const inputboxState = useSelector((state) => state.inputboxReducer);
@@ -23,7 +22,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Header />
-      <Testcomponent />
+
       <Inputbox
         placeholder="Artist"
         value={inputboxState}
@@ -34,8 +33,14 @@ function App() {
         value={inputboxState2}
         onchange={(newSong) => dispatch(changeSong(newSong))}
       />
-      <Dropdownmenu selection={genre} />
-      <Dropdownmenu selection={rating} />
+      <Dropdownmenu
+        selection={genre}
+        onchange={(item) => dispatch(changeSelected(item))}
+      />
+      <Dropdownmenu
+        selection={rating}
+        onchange={(item) => dispatch(changeSelected(item))}
+      />
 
       <Addsongbtn />
       <Listoverview />
