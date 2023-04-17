@@ -11,3 +11,10 @@ export const changeSong = (songName) => {
     payload: songName,
   };
 };
+
+export const changeSelected = (item) => {
+  return {
+    type: "CHANGE_DD_MENU_ITEM",
+    payload: item,
+  };
+};

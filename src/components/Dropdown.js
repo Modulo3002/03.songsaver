@@ -1,18 +1,26 @@
 import React from "react";
 
-function Dropdownmenu() {
+// const log = (event) => {
+//   console.log(event.target.value);
+//   return event.target.value;
+// };
+
+function Dropdownmenu(props) {
+  console.log(props.selection);
+  const dropDownMenuItems = props.selection.map((x) => {
+    console.log(x);
+    return <option value={x}>{x}</option>;
+  });
+
   return (
-    <select>
-      {/* {blablabla} */}
-      {/* <option value="">Kies een muziekgenre</option>
-      <option value="pop">Pop</option>
-      <option value="rock">Rock</option>
-      <option value="dance">Dance</option>
-      <option value="disco">Disco</option>
-      <option value="electronic">electronic</option>
-      <option value="hip-hop">Hip-Hop</option>
-      <option value="ballad">Ballad</option> */}
+    <select
+      id="ddmenu"
+      onChange={(event) => {
+        props.onchange(event.target.value);
+      }}
+    >
       <option value=""></option>
+      {dropDownMenuItems}
     </select>
   );
 }
