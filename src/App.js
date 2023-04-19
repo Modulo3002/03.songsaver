@@ -6,16 +6,29 @@ import Addsongbtn from "./components/Addsongbtn";
 import Listoverview from "./components/List-overview";
 import Header from "./components/Header";
 import { useDispatch } from "react-redux";
-import { changeArtist, changeSelected, changeSong } from "./actions";
+import {
+  changeArtist,
+  changeSong,
+  changeSelectedGenre,
+  changeSelectedRating,
+  updateListoverview,
+} from "./actions";
 import { useSelector } from "react-redux";
 
 function App() {
-  const inputboxState = useSelector((state) => state.inputboxReducer);
-  const inputboxState2 = useSelector((state) => state.inputboxReducer2);
-  console.log(inputboxState2);
+  const inputboxArtistState = useSelector(
+    (state) => state.inputboxArtistReducer
+  );
+  const inputboxSongState = useSelector((state) => state.inputboxSongReducer);
+  const dropdownRatingState = useSelector(
+    (state) => state.dropdownRatingReducer
+  );
+  const dropdownGenreState = useSelector((state) => state.dropdownGenreReducer);
+  const listoverviewState = useSelector((state) => state.listOverviewReducer);
   const rating = [1, 2, 3, 4, 5];
   const genre = ["pop", "rock", "dance", "disco", "electro"];
   const dispatch = useDispatch();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,25 +38,36 @@ function App() {
 
       <Inputbox
         placeholder="Artist"
-        value={inputboxState}
+        value={inputboxArtistState}
         onchange={(newArtist) => dispatch(changeArtist(newArtist))}
       />
       <Inputbox
         placeholder="Song name"
-        value={inputboxState2}
+        value={inputboxSongState}
         onchange={(newSong) => dispatch(changeSong(newSong))}
       />
       <Dropdownmenu
         selection={genre}
-        onchange={(item) => dispatch(changeSelected(item))}
+        onchange={(item) => dispatch(changeSelectedGenre(item))}
       />
       <Dropdownmenu
         selection={rating}
-        onchange={(item) => dispatch(changeSelected(item))}
+        onchange={(item) => dispatch(changeSelectedRating(item))}
       />
 
-      <Addsongbtn />
-      <Listoverview />
+      <Addsongbtn
+        onclick={() =>
+          dispatch(
+            updateListoverview(
+              inputboxArtistState,
+              inputboxSongState,
+              dropdownGenreState,
+              dropdownRatingState
+            )
+          )
+        }
+      />
+      <Listoverview overview={listoverviewState} />
     </div>
   );
 }

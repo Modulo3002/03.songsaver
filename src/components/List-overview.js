@@ -1,6 +1,18 @@
 import React from "react";
 
-function Listoverview() {
+function Listoverview(props) {
+  const makeList = (list) => {
+    return list.map((listElement) => {
+      return (
+        <tr>
+          <td>{listElement.artist}</td>
+          <td>{listElement.song}</td>
+          <td>{listElement.genre}</td>
+          <td>{listElement.rating}</td>
+        </tr>
+      );
+    });
+  };
   return (
     <div>
       <table>
@@ -10,23 +22,12 @@ function Listoverview() {
           <th>Genre</th>
           <th>Rating</th>
         </tr>
+        {makeList(props.overview)}
         <tr>
           <td>Artist 1</td>
           <td>songname 1 blablablabla</td>
           <td>genre 1</td>
           <td>rating 1</td>
-        </tr>
-        <tr>
-          <td>Artist 2</td>
-          <td>songname 2</td>
-          <td>genre 2 sadfasdfasd</td>
-          <td>rating 2</td>
-        </tr>
-        <tr>
-          <td>Artist 3</td>
-          <td>songname 3</td>
-          <td>genre 3</td>
-          <td>rating 3</td>
         </tr>
       </table>
     </div>

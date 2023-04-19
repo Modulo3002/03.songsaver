@@ -12,9 +12,23 @@ export const changeSong = (songName) => {
   };
 };
 
-export const changeSelected = (item) => {
+export const changeSelectedGenre = (item) => {
   return {
-    type: "CHANGE_DD_MENU_ITEM",
+    type: "CHANGE_GENRE",
     payload: item,
+  };
+};
+
+export const changeSelectedRating = (item) => {
+  return {
+    type: "CHANGE_RATING",
+    payload: item,
+  };
+};
+
+export const updateListoverview = (Artist, Song, Genre, Rating) => {
+  return {
+    type: "ADD_TO_LIST",
+    payload: { artist: Artist, song: Song, genre: Genre, rating: Rating },
   };
 };
