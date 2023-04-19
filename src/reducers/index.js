@@ -1,11 +1,14 @@
 import { combineReducers } from "redux";
-import { inputboxReducer, inputboxReducer2 } from "./inputbox";
-import { dropdownReducer } from "./dropdown";
+import { inputboxArtistReducer, inputboxSongReducer } from "./inputbox";
+import { dropdownGenreReducer, dropdownRatingReducer } from "./dropdown";
+import { listOverviewReducer } from "./listoverview";
 
 const allReducers = combineReducers({
-  inputboxReducer,
-  inputboxReducer2,
-  dropdownReducer,
+  inputboxArtistReducer,
+  inputboxSongReducer,
+  dropdownGenreReducer,
+  dropdownRatingReducer,
+  listOverviewReducer,
 });
 
 export default allReducers;
