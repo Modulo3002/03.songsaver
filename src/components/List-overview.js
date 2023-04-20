@@ -23,12 +23,6 @@ function Listoverview(props) {
           <th>Rating</th>
         </tr>
         {makeList(props.overview)}
-        <tr>
-          <td>Artist 1</td>
-          <td>songname 1 blablablabla</td>
-          <td>genre 1</td>
-          <td>rating 1</td>
-        </tr>
       </table>
     </div>
   );
