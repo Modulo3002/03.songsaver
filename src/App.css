@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 60vh;
+.App { 
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+ 
+.inputFields{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.inputBoxes{
+  min-height: 20px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropDown{
+  min-height: 20px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.addSongBtn{
+  background-color: #ffffff;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+
+.listOVerview {
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.listOverview td, .listOverview th {
+  text-align: center;
+  padding: 8px;
+}
+
+.listOverview td {
+  border-right: 3px solid #ffffff;
+  font-size: 13px;
+}
+/* backgrounds */
+.listOverview thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+
+
+ .listOverview tr:nth-child(even) {
+  background: #F8F8F8;
 }

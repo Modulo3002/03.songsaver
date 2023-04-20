@@ -7,12 +7,13 @@ function Dropdownmenu(props) {
 
   return (
     <select
+      className="dropDown"
       id="ddmenu"
       onChange={(event) => {
         props.onchange(event.target.value);
       }}
     >
-      <option value="">Rating</option>
+      <option value=""></option>
       {dropDownMenuItems}
     </select>
   );
