@@ -15,7 +15,7 @@ function Listoverview(props) {
   };
   return (
     <div>
-      <table>
+      <table className="listOverview">
         <tr>
           <th>Artist</th>
           <th>Songname</th>

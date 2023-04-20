@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Inputbox from "./components/Inputboxes";
 import Dropdownmenu from "./components/Dropdown";
@@ -31,42 +30,40 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
       <Header />
+      <div className="inputFields">
+        <Inputbox
+          placeholder="Artist"
+          value={inputboxArtistState}
+          onchange={(newArtist) => dispatch(changeArtist(newArtist))}
+        />
+        <Inputbox
+          placeholder="Song name"
+          value={inputboxSongState}
+          onchange={(newSong) => dispatch(changeSong(newSong))}
+        />
+        <Dropdownmenu
+          selection={genre}
+          onchange={(item) => dispatch(changeSelectedGenre(item))}
+        />
+        <Dropdownmenu
+          selection={rating}
+          onchange={(item) => dispatch(changeSelectedRating(item))}
+        />
 
-      <Inputbox
-        placeholder="Artist"
-        value={inputboxArtistState}
-        onchange={(newArtist) => dispatch(changeArtist(newArtist))}
-      />
-      <Inputbox
-        placeholder="Song name"
-        value={inputboxSongState}
-        onchange={(newSong) => dispatch(changeSong(newSong))}
-      />
-      <Dropdownmenu
-        selection={genre}
-        onchange={(item) => dispatch(changeSelectedGenre(item))}
-      />
-      <Dropdownmenu
-        selection={rating}
-        onchange={(item) => dispatch(changeSelectedRating(item))}
-      />
-
-      <Addsongbtn
-        onclick={() =>
-          dispatch(
-            updateListoverview(
-              inputboxArtistState,
-              inputboxSongState,
-              dropdownGenreState,
-              dropdownRatingState
+        <Addsongbtn
+          onclick={() =>
+            dispatch(
+              updateListoverview(
+                inputboxArtistState,
+                inputboxSongState,
+                dropdownGenreState,
+                dropdownRatingState
+              )
             )
-          )
-        }
-      />
+          }
+        />
+      </div>
       <Listoverview overview={listoverviewState} />
     </div>
   );
