@@ -26,7 +26,7 @@
   border-radius: 4px;
 }
 
-.addSongBtn{
+.addSongBtn {
   background-color: #ffffff;
   padding: 5px;
   margin: 5px;
@@ -34,7 +34,13 @@
   border-radius: 4px;
 }
 
-
+.deleteSongBtn{
+  background-color: #ffffff;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
 .listOVerview {
   border-radius: 5px;
   font-size: 15px;

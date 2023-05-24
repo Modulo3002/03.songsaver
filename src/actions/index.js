@@ -32,3 +32,9 @@ export const updateListoverview = (Artist, Song, Genre, Rating) => {
     payload: { artist: Artist, song: Song, genre: Genre, rating: Rating },
   };
 };
+
+export const deleteLatestEntry = ()=>{
+  return {
+    type: "DELETE_LATEST_ENTRY"
+  }
+}

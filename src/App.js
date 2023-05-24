@@ -11,8 +11,10 @@ import {
   changeSelectedGenre,
   changeSelectedRating,
   updateListoverview,
+  deleteLatestEntry,
 } from "./actions";
 import { useSelector } from "react-redux";
+import Deletesongbtn from "./components/Deletesongbtn";
 
 function App() {
   const inputboxArtistState = useSelector(
@@ -58,11 +60,12 @@ function App() {
                 inputboxArtistState,
                 inputboxSongState,
                 dropdownGenreState,
-                dropdownRatingState
+                dropdownRatingState 
               )
             )
           }
         />
+        <Deletesongbtn onclick={()=>dispatch(deleteLatestEntry()) }/>
       </div>
       <Listoverview overview={listoverviewState} />
     </div>
